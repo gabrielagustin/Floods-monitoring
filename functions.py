@@ -177,27 +177,4 @@ def openFileHDF(file, nroBand):
     return src_ds, band, GeoT, Project
     
     
-    
-
-def matchData(data_src, data_match, type, nRow, nCol):
-    # funcion que retorna la informacion presente en el raster data_scr
-    # modificada con los datos de proyeccion y transformacion del raster data_match
-    # se crea un raster en memoria que va a ser el resultado
-    #data_result = gdal.GetDriverByName('MEM').Create('', data_match.RasterXSize, data_match.RasterYSize, 1, gdalconst.GDT_Float64)
-
-    data_result = gdal.GetDriverByName('MEM').Create('', nCol, nRow, 1)
-
-    # Se establece el tipo de proyección y transfomcion en resultado  qye va ser coincidente con data_match
-    data_result.SetGeoTransform(data_match.GetGeoTransform())
-    data_result.SetProjection(data_match.GetProjection())
-
-    # se cambia la proyeccion de data_src, con los datos de data_match y se guarda en data_result
-    if (type == "Nearest"):
-        gdal.ReprojectImage(data_src,data_result,data_src.GetProjection(),data_match.GetProjection(), gdalconst.GRA_NearestNeighbour)
-    if (type == "Bilinear"):
-        gdal.ReprojectImage(data_src, data_result, data_src.GetProjection(), data_match.GetProjection(), gdalconst.GRA_Bilinear)
-    if (type == "Cubic"):
-        gdal.ReprojectImage(data_src, data_result, data_src.GetProjection(), data_match.GetProjection(), gdalconst.GRA_Cubic)
-    if (type == "Average"):
-        gdal.ReprojectImage(data_src, data_result, data_src.GetProjection(), data_match.GetProjection(), gdal.GRA_Average)
-    return data_result
+ 
