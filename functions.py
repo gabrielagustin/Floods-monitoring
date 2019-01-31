@@ -2,7 +2,7 @@
 """
 Created on Thu Jun 28 14:46:41 2018
 
-@author: stanza
+@author: gag
 """
 
 import numpy as np
