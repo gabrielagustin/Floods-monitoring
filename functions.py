@@ -3,12 +3,76 @@
 Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
+Documento donde se encuentran las funciones requeridas para el analisis de los 
+histogramas para obtener estadisticos que se utilizan para la detección
+de áreas inundadas
 """
 
 import numpy as np
 from osgeo import gdal, ogr, gdalconst
 import peakutils
 from matplotlib import pyplot as plt
+
+
+#### --------------------------------------------------------------------------------------3
+### función que abre archivo HDF y carga la banda que recibe como trabajo
+### devuelve: el objeto source, la banda, la georeferenciación y la proyección
+
+def openFileHDF(file, nroBand):
+    #print "Open File"
+    # file = path+nameFile
+    #print file
+    try:
+        src_ds = gdal.Open(file)
+    except (RuntimeError, e):
+        print('Unable to open File')
+        print(e)
+        sys.exit(1)
+
+#    cols = src_ds.RasterXSize
+#    rows = src_ds.RasterYSize
+#    print(cols)
+#    print(rows)
+    bands = src_ds.RasterCount
+#    print(bands)
+
+    # se obtienen las caracteristicas de las imagen HDR
+    GeoT = src_ds.GetGeoTransform()
+    #print GeoT
+    Project = src_ds.GetProjection()
+
+    try:
+        srcband = src_ds.GetRasterBand(nroBand)
+    except(RuntimeError, e):
+        # for example, try GetRasterBand(10)
+        print('Band ( %i ) not found' % band_num)
+        print(e)
+        sys.exit(1)
+    band = srcband.ReadAsArray()
+#    print(band.shape)
+    return src_ds, band, GeoT, Project
+
+
+
+
+#### --------------------------------------------------------------------------------------
+### se define la función multimodal a partir de la composición de gausianas
+
+def gauss(x,mu,sigma,A):
+    return A*exp(-(x-mu)**2.0/(2*sigma**2.0))
+
+def bimodal(x,mu1,sigma1,A1,mu2,sigma2,A2): 
+    return gauss(x,mu1,sigma1,A1)+gauss(x,mu2,sigma2,A2)
+
+### la multimodal para este caso la define con 3 gausianas
+def multimodal(x,mu1,sigma1,A1,mu2,sigma2,A2, mu3,sigma3,A3): 
+    return gauss(x,mu1,sigma1,A1)+gauss(x,mu2,sigma2,A2) + gauss(x, mu3,sigma3,A3)
+    
+
+#### --------------------------------------------------------------------------------------
+
+
+
 
 def listofMax(y):
     l=[]
@@ -142,39 +206,9 @@ def Max1MinLocalMax2(x,y):
 
     return pico1, minimoLocal, pico2, pico3
     
-def openFileHDF(file, nroBand):
-    #print "Open File"
-    # file = path+nameFile
-    #print file
-    try:
-        src_ds = gdal.Open(file)
-    except (RuntimeError, e):
-        print('Unable to open File')
-        print(e)
-        sys.exit(1)
 
-#    cols = src_ds.RasterXSize
-#    rows = src_ds.RasterYSize
-#    print(cols)
-#    print(rows)
-    bands = src_ds.RasterCount
-#    print(bands)
+    
 
-    # se obtienen las caracteristicas de las imagen HDR
-    GeoT = src_ds.GetGeoTransform()
-    #print GeoT
-    Project = src_ds.GetProjection()
-
-    try:
-        srcband = src_ds.GetRasterBand(nroBand)
-    except(RuntimeError, e):
-        # for example, try GetRasterBand(10)
-        print('Band ( %i ) not found' % band_num)
-        print(e)
-        sys.exit(1)
-    band = srcband.ReadAsArray()
-#    print(band.shape)
-    return src_ds, band, GeoT, Project
     
     
  
