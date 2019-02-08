@@ -9,3 +9,4 @@ Dependences:
     python - Gdal
     python - Peakutils
     python - Matplotlib
+    python - Scipy
