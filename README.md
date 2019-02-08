@@ -1,6 +1,6 @@
 # Floods-monitoring-with-SAR
 
-Description: Floods monitoring with SAR satellite data 
+The detection of flooded areas in SAR satellite images is carried out. A multimodal function is adjusted to the histogram of each SAR image and statistics are obtained that allow the discrimination of the zones.
 
 
 Dependences: 
