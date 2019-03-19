@@ -10,7 +10,7 @@ Satellite Data:
 
 
 <p align="center">
-  <img width=650 src="histogramas.gif"/>
+  <img width=500 src="histogramas.gif"/>
  </p>
 
 Dependences: 
