@@ -10,7 +10,7 @@ Satellite Data:
 
 
 <p align="center">
-  <img width=750 src="Histogram_and_water.gif"/>
+  <img width=850 src="Histogram_and_water.gif"/>
  </p>
 
 
