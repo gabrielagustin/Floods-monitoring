@@ -10,8 +10,15 @@ Satellite Data:
 
 
 <p align="center">
-  <img width=500 src="histogramas.gif"/>
+  <img width=500 src="Histogramas.gif"/>
  </p>
+
+
+<p align="center">
+  <img width=500 src="Map.gif"/>
+ </p>
+
+
 
 Dependences: 
 
@@ -20,3 +27,4 @@ Dependences:
     python - Peakutils
     python - Matplotlib
     python - Scipy
+    python - Imageio
