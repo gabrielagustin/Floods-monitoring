@@ -15,7 +15,7 @@ Satellite Data:
 
 
 <p align="center">
-  <img width=500 src="Map.gif"/>
+  <img width=500 src="Water.gif"/>
  </p>
 
 
