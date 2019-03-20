@@ -15,17 +15,31 @@ import os
 import imageio
 
 
-pathMap = "/home/gag/Escritorio/nuevasInunadaciones/histograms/"
-arr = os.listdir(pathMap)
-arr.sort()
-print(arr)
 
-with imageio.get_writer(pathMap+str('/Map.gif'), mode='I', duration=0.9) as writer:
-    for i in arr:
-        if (i.endswith('.png')):
-            print(i)
-            image = imageio.imread(pathMap+(i))
-            writer.append_data(image)
+def create_gif_from_png(pathIn, pathOut):
+    """ 
+    pathIn: directory where are .png files
+    pathOut: directory where .gif file is created
+    """
+    arr = os.listdir(pathIn)
+    arr.sort()
+    print(arr)
 
+    with imageio.get_writer(pathOut+str('/Map.gif'), mode='I', duration=0.9) as writer:
+        for i in arr:
+            if (i.endswith('.png')):
+                print(i)
+                image = imageio.imread(pathIn+(i))
+                writer.append_data(image)          
+    return
+
+
+
+
+if __name__ == "__main__":
+
+    pathIn = "/home/gag/Escritorio/nuevasInunadaciones/histograms/"
+    pathOut = "/home/gag/Escritorio/nuevasInunadaciones/histograms/"
+    create_gif_from_png(pathIn, pathOut)
 
 
