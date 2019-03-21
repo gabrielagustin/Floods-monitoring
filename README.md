@@ -7,8 +7,9 @@ Satellite Data:
  - Sentinel-1. SAR in C-Band C.  Interferometric Wide (IW) swath mode. VV polarisation. 
 
 
+Description:
 
-En la figura se presenta, el histograma de las imagenes satelitales (izquierda) junto a la función multimodal ajustada (con sus máximos) y la imagen satelital(derecha) en la cual se encuentran segmentados los cuerpos de agua utilizando información del histograma. 
+The figure shows the histogram of the satellite images (left) together with the adjusted multimodal function (with its maximums) and the satellite image (right) in which the bodies of water are segmented using information from the histogram.
 
 <p align="center">
   <img width=850 src="Histogram_and_water.gif"/>
