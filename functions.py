@@ -3,9 +3,9 @@
 Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
-Documento donde se encuentran las funciones requeridas para el analisis de los 
-histogramas para obtener estadisticos que se utilizan para la detección
-de áreas inundadas
+Documento donde se encuentran las funciones para requeridas para la apertura de las imagenes SAR y
+el analisis de sus histogramas. 
+Los estadisticos calculados a los histogramas se utilizan para la detección de áreas inundadas
 """
 
 import numpy as np
@@ -15,10 +15,12 @@ from matplotlib import pyplot as plt
 
 
 #### --------------------------------------------------------------------------------------3
-### función que abre archivo HDF y carga la banda que recibe como trabajo
-### devuelve: el objeto source, la banda, la georeferenciación y la proyección
 
 def openFileHDF(file, nroBand):
+    """
+    Función que abre archivo HDF y carga la banda que recibe como trabajo
+    Retorna: el objeto fuente, la banda, la georeferenciación y la proyección
+    """
     #print "Open File"
     # file = path+nameFile
     #print file
