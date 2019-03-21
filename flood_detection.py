@@ -93,13 +93,13 @@ fig, ax = plt.subplots()
 
 for i in arr:
 #    S1A
-#    i = "20150427.data"
+    i = "20150427.data"
     i = "20150109.data"
-#    i = "20150521.data"
-#    i = "20150403.data"
-#    i = "20160207.data" 
-#    i = "20160326.data"
-#    i = "20160419.data"
+    i = "20150521.data"
+    i = "20150403.data"
+    i = "20160207.data" 
+    i = "20160326.data"
+    i = "20160419.data"
 #    S1B
 #    i = "20161010.data"
 #    plt.clf()
@@ -123,7 +123,7 @@ for i in arr:
     plt.ylim(0, 0.3)
 
     ### se calcula los valores en el eje x para los cuales se producen los 
-    ### máximos en el histograma
+    ### máximos en el histograma, los cuales pueden ser 2 o 3
     x= x[:-1]
     pico1, minimoLocal, pico2, pico3 = functions.Max1MinLocalMax2(x,y)
     
