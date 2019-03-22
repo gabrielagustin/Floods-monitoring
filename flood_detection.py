@@ -4,19 +4,17 @@ Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
 
-Script que permite realizar la detección de áreas inundadas en imágenes SAR,
-para lo cual se ajusta una función multimodal al histograma de cada imagen SAR
-y de esta función se obtienen obtienen estadisticos que permiten realizar
-la discriminación de las zonas. 
+Script that allows the detection of flooded areas in SAR images.
+It adjusts a multimodal function to the histogram of each SAR image 
+and from this function, statistics are obtained (statistics of each 
+Gaussian function) that allow the discrimination of the zones.
 
 """
 import os
+import numpy as np
 from matplotlib import cm
 from matplotlib import pyplot as plt
-import numpy as np
 from scipy.optimize import curve_fit
-
-
 import functions
 
 # from pylab import *
