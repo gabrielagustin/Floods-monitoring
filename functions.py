@@ -73,47 +73,24 @@ def multimodal(x,mu1,sigma1,A1,mu2,sigma2,A2, mu3,sigma3,A3):
 
 #### --------------------------------------------------------------------------------------
 
-
-
-
 def listofMax(y):
+    """
+    Funcion que lista los maximos del vector y 
+    Utiliza la funcion peakutils
+    """
     l=[]
-#    x = np.arange(y.size)
-#    dy = np.gradient(y, x)
-#    
-#    ddy = np.gradient(dy)
-#    fig, ax = plt.subplots()
-#    ax.plot(ddy)
-#    plt.show()
-#    for i in range(0, len(ddy)):
-#        if((ddy[i] < 0)):
-#            l.append(y[i])
-#    myList = list(set(l))
-#    myList.sort()
-#    return myList
-###########------------------------------------------------------------------
-    indexes = peakutils.indexes(y, thres=0.005/max(y), min_dist=50)  #error line
+    indexes = peakutils.indexes(y, thres=0.005/max(y), min_dist=50) 
     print(indexes) 
     for i in range(0,len(indexes)):
         print(y[indexes[i]])
         l.append(y[indexes[i]])
-###########------------------------------------------------------------------    
-#    max = y[1]
-#    l = []
-#    l.append(max)
-#    for i in range(1,len(y)-1, 15):
-##        print(y[i])
-#        if (y[i] > y[i-1]): # tendencia ascendente
-#            if (y[i] > max): # mas grande
-#                max = y[i]
-#        elif (y[i] > y[i+1]): # tendencia descendente
-#            if (isBigger(max,l)):
-#                l.append(max)
-#                max=np.min(l)
-#    l.remove(0.0)
+    ### funcion set elimina los elementos repetidos
     myList = list(set(l))
     myList.sort()
     return myList
+
+#### --------------------------------------------------------------------------------------
+
 
 def minLocal(max1, max2, y):
     indexMax2 = index(max2, y)
@@ -221,11 +198,11 @@ def find_peaks(a):
     for i in range(lenght):
         ispeak = True
         if i-1 > 0:
-            ispeak &= (x[i] > 1 * x[i-1])
+            ispeak &= (x[i] > 1.1 * x[i-1])
         if i+1 < lenght:
-            ispeak &= (x[i] > 1 * x[i+1])
+            ispeak &= (x[i] > 1.1 * x[i+1])
 
-        ispeak &= (x[i] > 0.08 * max)
+        ispeak &= (x[i] > 1 * max)
         if ispeak:
             ret.append(x[i]/100)
     return ret
