@@ -211,6 +211,25 @@ def Max1MinLocalMax2(x,y):
 
     
 
-    
+def find_peaks(a):
+    a= a*100
+    x = np.array(a)
+    max = np.max(x)
+    print(max)
+    lenght = len(a)
+    ret = []
+    for i in range(lenght):
+        ispeak = True
+        if i-1 > 0:
+            ispeak &= (x[i] > 1 * x[i-1])
+        if i+1 < lenght:
+            ispeak &= (x[i] > 1 * x[i+1])
+
+        ispeak &= (x[i] > 0.08 * max)
+        if ispeak:
+            ret.append(x[i]/100)
+    return ret
+
+
     
  
