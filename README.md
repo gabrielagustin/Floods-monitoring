@@ -4,7 +4,7 @@ The detection of flooded areas in SAR satellite images is carried out. A multimo
 
 
 Satellite Data:
- - Sentinel-1. SAR in C-Band C.  Interferometric Wide (IW) swath mode. VV polarisation. 
+ - Sentinel-1. SAR in C-Band.  Interferometric Wide (IW) swath mode. VV polarisation. 
 
 
 Description:
