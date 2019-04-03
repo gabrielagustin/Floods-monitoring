@@ -87,6 +87,7 @@ def listofMax(y):
     ### funcion set elimina los elementos repetidos
     myList = list(set(l))
     myList.sort()
+    print("cantidad de maximos: " +str(len(myList)))
     return myList
 
 #### --------------------------------------------------------------------------------------
@@ -186,7 +187,7 @@ def Max1MinLocalMax2(x,y):
     return pico1, minimoLocal, pico2, pico3
     
 
-    
+#### --------------------------------------------------------------------------------------   
 
 def find_peaks(a):
     a= a*100
