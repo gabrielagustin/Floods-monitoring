@@ -67,7 +67,8 @@ if __name__ == "__main__":
     # pathIn = "/home/gag/Escritorio/nuevasInunadaciones/histograms/"
     # pathOut = "/home/gag/Escritorio/nuevasInunadaciones/histograms/"
     # pathIn = pathOut = "/home/gag/Escritorio/nuevasInunadaciones/Mapas/"
-    pathIn = pathOut = "/home/gag/Escritorio/nuevasInunadaciones/SoloAgua/"
+    # pathIn = pathOut = "/home/gag/Escritorio/nuevasInunadaciones/SoloAgua/"
+    pathIn = pathOut = "/home/gag/Escritorio/nuevasInunadaciones/histograms/evolucion/"
     create_gif_from_png(pathIn, pathOut)
 
 

@@ -36,16 +36,18 @@ for i in arr:
    transform = GeoTVV_0
    src_ds_VV = src_ds_VV_0
    xmin,xmax,ymin,ymax=transform[0],transform[0]+transform[1]*src_ds_VV.RasterXSize,transform[3]+transform[5]*src_ds_VV.RasterYSize,transform[3]
+   ### se agrega fecha del la imagen
+   fecha = i[:-5]
+   plt.title(fecha)
    lcNew_0 = bandVV_0.flatten('C')
-   y, x, _= plt.hist(lcNew_0, 500, [-30,-1], facecolor='gray', normed=1) 
+   y, x, _= plt.hist(lcNew_0, 500, [-30,-1], facecolor='gray', normed=1, label="20150109") 
    
-   #fecha = i[:-5]
-   #plt.title(fecha)
    plt.xlim(-30, -1)
    plt.ylim(0, 0.3)
 
    if (i != "20150109.data"):
        ### for other states
+       fecha = i[:-5]
        path2 = path + i
        fileVV = path2 +"/Sigma0_VV_db.img"
        src_ds_VV, bandVV, GeoTVV, ProjectVV = functions.openFileHDF(fileVV, 1)
@@ -54,9 +56,9 @@ for i in arr:
        xmin,xmax,ymin,ymax=transform[0],transform[0]+transform[1]*src_ds_VV.RasterXSize,transform[3]+transform[5]*src_ds_VV.RasterYSize,transform[3]
    
        lcNew = bandVV.flatten('C')
-       y_i, x_i, _= plt.hist(lcNew, 500, [-30,-1], normed=1, facecolor='g', alpha=0.75) 
+       y_i, x_i, _= plt.hist(lcNew, 500, [-30,-1], normed=1, facecolor='g', alpha=0.75, label=fecha) 
 
-       fecha = i[:-5]
-    #    plt.savefig(str("/home/stanza/Downloads/nuevasInunadaciones/Recorte_dB/") + str(fecha) +'.png')
+       plt.legend()
+       plt.savefig(str("/home/gag/Escritorio/nuevasInunadaciones/histograms/evolucion/") + str(fecha) +'.png')
        plt.show()
 
