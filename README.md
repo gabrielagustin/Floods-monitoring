@@ -15,6 +15,9 @@ The figure shows the histogram of the satellite images (left) together with the 
   <img width=850 src="Histogram_and_water.gif"/>
  </p>
 
+<p align="center">
+  <img width=850 src="Histogram_evolution.gif"/>
+ </p>
 
 
 
