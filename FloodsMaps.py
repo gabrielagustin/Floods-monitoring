@@ -12,11 +12,11 @@ and deviation statistics of each Gaussian)
 
 """
 
-
+from matplotlib import cm
 
 
 def flood_maps(bandVV, statsV):
-     mu1 = statsV[0]
+    mu1 = statsV[0]
     sigma1 = statsV[1]
     mu2 = statsV[2]
     sigma2 = statsV[3]
@@ -178,4 +178,3 @@ def flood_maps(bandVV, statsV):
 #--------------------------------------------------------------------------
     plt.show()
 
-    return

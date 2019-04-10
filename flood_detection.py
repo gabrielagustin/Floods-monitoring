@@ -54,48 +54,7 @@ import functions
 # from skimage.morphology import watershed, square
 
 
-##### Sentinel S1A-2015-2016 -- Inundacion
-path = "/media/gag/Datos/Estancia_Italia_2018/Sentinel-1A-SantaFe/Recorte_dB/"
-pathMapas = "/media/gag/Datos/Trabajos/Sentinel-1A-SantaFe/Mapas/"
-
-
-##### Sentinel S1B
-#path = "/media/stanza/DA6EF09D6EF0741B/Sentinel1B-SantaFe/Recorte_dB/"
-
-
-
-arr = os.listdir(path)
-### ordeno la lista
-arr.sort()
-print(arr)
-
-# Fit GMM
-#gmm = GaussianMixture(n_components = 3)
-#gmm = gmm.fit(hist)
-
-
-
-
-
-fig, ax = plt.subplots()
-
-for i in arr:
-#    S1A
-    # i = "20150427.data"
-    # i = "20150109.data"
-    # i = "20150521.data"
-    # i = "20150403.data"
-    # i = "20160207.data" 
-    # i = "20160326.data"
-    # i = "20160419.data"
-#    S1B
-#    i = "20161010.data"
-#    plt.clf()
-    print(i)
-    
-#    ax.cla()
-    path2 = path + i
-    fileVV = path2 +"/Sigma0_VV_db.img"
+def multimodal_analysis(fileVV):
     ### se lee la imagen
     src_ds_VV, bandVV, GeoTVV, ProjectVV = functions.openFileHDF(fileVV, 1)
     transform = GeoTVV
@@ -103,6 +62,7 @@ for i in arr:
     xmin,xmax,ymin,ymax=transform[0],transform[0]+transform[1]*src_ds_VV.RasterXSize,transform[3]+transform[5]*src_ds_VV.RasterYSize,transform[3]
     ### se calcula y se plotea el histograma
     lcNew = bandVV.flatten('C')
+    fig, ax = plt.subplots()
     y, x, _= plt.hist(lcNew, 400, [-30,-1], facecolor='gray', density=1) 
     fecha = i[:-5]
     plt.title(fecha)
@@ -197,8 +157,8 @@ for i in arr:
 # # #new = pd.DataFrame(data={'params':params,'sigma':sigma},index=bimodal.__code__.co_varnames[1:])
 # # #
 # # #print(new)
-
-return
+    statsV = []
+    return statsV
 
 
 
@@ -209,5 +169,39 @@ return
 
 
 if __name__ == "__main__":
+
+    ##### Sentinel S1A-2015-2016 -- Inundacion
+    path = "/media/gag/Datos/Estancia_Italia_2018/Sentinel-1A-SantaFe/Recorte_dB/"
+    pathMapas = "/media/gag/Datos/Trabajos/Sentinel-1A-SantaFe/Mapas/"
+    ##### Sentinel S1B
+    #path = "/media/stanza/DA6EF09D6EF0741B/Sentinel1B-SantaFe/Recorte_dB/"
+
+    arr = os.listdir(path)
+    ### ordeno la lista
+    arr.sort()
+    print(arr)
+
+    # Fit GMM
+    #gmm = GaussianMixture(n_components = 3)
+    #gmm = gmm.fit(hist)
+
+    for i in arr:
+    #    S1A
+        # i = "20150427.data"
+        # i = "20150109.data"
+        # i = "20150521.data"
+        # i = "20150403.data"
+        # i = "20160207.data" 
+        # i = "20160326.data"
+        # i = "20160419.data"
+    #    S1B
+    #    i = "20161010.data"
+    #    plt.clf()
+        print(i)
+        
+    #    ax.cla()
+        # path2 = path + i
+        # fileVV = path2 +"/Sigma0_VV_db.img"
+        # statsVector = multimodal_analysis(fileVV)
 
 
