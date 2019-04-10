@@ -191,7 +191,7 @@ for i in arr:
 # # ##    bandVV = result
 # # #
 # # #    ######---------------------------------------------------------------------    
-# # #    #### se aplica la umbralizacion utilizando los valores ohttp://www.bna.com.ar/Personas/HomeBankingbtenidos del 
+# # #    #### se aplica la umbralizacion utilizando los valores obtenidos del 
 # # #    #### ajuste de la funcion multimodal al histograma
 # # #    ### for ciudad
 # #     thresholdedCity = deepcopy(bandVV)
