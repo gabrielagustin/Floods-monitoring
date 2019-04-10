@@ -73,17 +73,6 @@ print(arr)
 #gmm = GaussianMixture(n_components = 3)
 #gmm = gmm.fit(hist)
 
-my_cmap1 = cm.gray
-my_cmap1.set_under('k',alpha=0)
-#my_cmap1 = cm.Greens
-my_cmap2 = cm.Blues_r
-my_cmap2.set_under('k',alpha=0)
-my_cmap3=cm.Greens_r
-my_cmap3.set_under('k',alpha=0)
-my_cmap4=cm.Reds_r
-my_cmap4.set_under('k',alpha=0)
-my_cmap5=cm.Oranges_r
-my_cmap5.set_under('k',alpha=0)
 
 
 
@@ -209,6 +198,8 @@ for i in arr:
 # # #
 # # #print(new)
 
+return
+
 
 
 def flood_maps(bandVV, statsV):
@@ -250,7 +241,8 @@ def flood_maps(bandVV, statsV):
 #
 #    ######--------------------------------------------------------------------- 
 #    ###### se plotean los mapas de inundacion con tres clases
-#    ##### Vegetacion-Agua-Tercer clase#for x in range(subwin_size, w-subwin_size,subwin_size):
+#    ##### Vegetacion-Agua-Tercer clase
+##  for x in range(subwin_size, w-subwin_size,subwin_size):
 ##    for y in range(subwin_size, h-subwin_size,subwin_size):    
 ##        print(y-subwin_size)
 ##        print(y+subwin_size)
@@ -315,6 +307,21 @@ def flood_maps(bandVV, statsV):
 # 
 ##------------------------------------------------------------------------------  
 #     
+
+    ### colors maps
+    my_cmap1 = cm.gray
+    my_cmap1.set_under('k',alpha=0)
+    #my_cmap1 = cm.Greens
+    my_cmap2 = cm.Blues_r
+    my_cmap2.set_under('k',alpha=0)
+    my_cmap3=cm.Greens_r
+    my_cmap3.set_under('k',alpha=0)
+    my_cmap4=cm.Reds_r
+    my_cmap4.set_under('k',alpha=0)
+    my_cmap5=cm.Oranges_r
+    my_cmap5.set_under('k',alpha=0)
+
+
     
 #    r1 = int(np.round(mu1-sigma1))
 #    print(r1)
