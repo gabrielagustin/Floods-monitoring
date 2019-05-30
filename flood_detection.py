@@ -200,8 +200,8 @@ if __name__ == "__main__":
         print(i)
         
     #    ax.cla()
-        # path2 = path + i
-        # fileVV = path2 +"/Sigma0_VV_db.img"
-        # statsVector = multimodal_analysis(fileVV)
+        path2 = path + i
+        fileVV = path2 +"/Sigma0_VV_db.img"
+        statsVector = multimodal_analysis(fileVV)
 
 
