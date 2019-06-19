@@ -18,41 +18,6 @@ from matplotlib import pyplot as plt
 from scipy.optimize import curve_fit
 import functions
 
-# from pylab import *
-# #from mpl_toolkits.axes_grid1 import ImageGrid
-
-# import matplotlib.cm as cm
-# from skimage import io
-
-
-# #from scipy import stats
-
-# from scipy import stats
-# 
-# import seaborn as sns
-# from PIL import Image
-# #import imageio
-# from numpy import linspace
-# from mpl_toolkits.axes_grid1 import make_axes_locatable
-# import numpy.ma as ma
-# import pandas as pd
-# from scipy import stats
-
-# from pylab import *
-
-# from sklearn.mixture import GaussianMixture
-# import scipy.stats
-
-# from copy import deepcopy
-
-
-# import peakutils
-# from peakutils.plot import plot as pplot
-
-
-# from scipy import ndimage as nd
-# from skimage.morphology import watershed, square
-
 
 def multimodal_analysis(fileVV):
     ### se lee la imagen
@@ -161,20 +126,11 @@ def multimodal_analysis(fileVV):
     return statsV
 
 
-
-
-
-
-
-
-
 if __name__ == "__main__":
 
-    ##### Sentinel S1A-2015-2016 -- Inundacion
-    path = "/media/gag/Datos/Estancia_Italia_2018/Sentinel-1A-SantaFe/Recorte_dB/"
-    pathMapas = "/media/gag/Datos/Trabajos/Sentinel-1A-SantaFe/Mapas/"
-    ##### Sentinel S1B
-    #path = "/media/stanza/DA6EF09D6EF0741B/Sentinel1B-SantaFe/Recorte_dB/"
+    ##### Sentinel S1A /S1B 
+    path = "..."
+    pathMapas = "..."
 
     arr = os.listdir(path)
     ### ordeno la lista
