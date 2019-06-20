@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
+
 """
 Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
 
 Script that allows the detection of flooded areas in SAR images.
-It adjusts a multimodal function to the histogram of each SAR image 
-and from this function, statistics are obtained (statistics of each 
-Gaussian function) that allow the discrimination of the zones.
+It adjusts a multimodal function to the histogram of each SAR image and from this function,
+statistics are obtained (statistics of each Gaussian function) that allow the discrimination of the zones.
 
 """
+
 import os
 import numpy as np
 from matplotlib import cm

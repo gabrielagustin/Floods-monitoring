@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
+
 """
 Created on Tue Feb  5 10:58:49 2019
 
 @author: gag
 
-Script que genera una imagen .gif a partir de una compilación
-de imagenes .png o .img 
+Script que genera una imagen .gif a partir de una compilación de imagenes .png o .img 
  
 """
-
 
 import os
 import imageio

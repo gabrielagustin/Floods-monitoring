@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
+#!/usr/bin/python
+
 """
 Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
+
 Documento donde se encuentran las funciones para requeridas para la apertura de las imagenes SAR y
 el analisis de sus histogramas. 
-Los estadisticos calculados a los histogramas se utilizan para la detección de áreas inundadas
+Los estadisticos calculados a los histogramas se utilizan para la detección de áreas inundadas.
+
 """
 
 import numpy as np
@@ -14,7 +18,7 @@ import peakutils
 from matplotlib import pyplot as plt
 
 
-#### --------------------------------------------------------------------------------------3
+#### --------------------------------------------------------------------------------------
 
 def openFileHDF(file, nroBand):
     """

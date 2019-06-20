@@ -7,7 +7,7 @@ Satellite Data:
  - Sentinel-1,  SAR in C-Band. Level-1 Ground Range Detected (GRD) product is used in High Resolution (HR) and Interferometric Wide (IW) swath mode. For the study area and the evaluated period is only found VV polarisation. 
 
 Processing:
- -  The GRS images were processed according to the following steps: thermal noise removal, radiometric calibration, terrain correction and convertion to decibels (dB). For which purpose Sentinel Application Platform (SNAP) software with the Sentinel-1 Toolbox (S1TBX) was used (http://step.esa.int/main/toolboxes/snap/). 
+ -  The GRD images were processed according to the following steps: thermal noise removal, radiometric calibration, terrain correction and convertion to decibels (dB). For which purpose Sentinel Application Platform (SNAP) software with the Sentinel-1 Toolbox (S1TBX) was used (http://step.esa.int/main/toolboxes/snap/). 
 
 
 Description:

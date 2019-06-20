@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
+
 """
 Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
 
-Script that obtains maps of flooded areas
-Thresholding is applied using the values obtained from the
-adjusting the multimodal function to the histogram (average
-and deviation statistics of each Gaussian)
+Script that obtains maps of flooded areas Thresholding is applied using the values obtained from the
+adjusting the multimodal function to the histogram (average and deviation statistics of each Gaussian).
 
 """
 
