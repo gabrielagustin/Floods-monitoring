@@ -2,7 +2,6 @@
 
 The detection of flooded areas in SAR satellite images is carried out. A multimodal function is adjusted to the histogram of each SAR image and statistics are obtained that allow the discrimination of the zones.
 
-
 Satellite Data:
  - Sentinel-1,  SAR in C-Band. Level-1 Ground Range Detected (GRD) product is used in High Resolution (HR) and Interferometric Wide (IW) swath mode. For the study area and the evaluated period is only found VV polarisation. 
 
