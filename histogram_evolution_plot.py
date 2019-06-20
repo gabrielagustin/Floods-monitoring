@@ -5,10 +5,8 @@ Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
 
-Script that allows to obtain the graph 
-of the temporal evolution of the histogram of the SAR images.
-In gray the histogram of the initial state appears and superimposed
-in green appears the other states.
+Script that allows to obtain the graph of the temporal evolution of the histogram of the SAR images.
+In gray the histogram of the initial state appears and superimposed in green appears the other states.
 
 """
 
