@@ -54,7 +54,9 @@ def create_gif(pathIn, extImg, nameFileOut):
     --------
     """
 
+    # list all files in the directory
     arr = os.listdir(pathIn)
+    # sort the files using alfabetic names
     arr.sort()
 
     with imageio.get_writer(pathIn + '/' + nameFileOut, mode='I', duration=0.9) as writer:
