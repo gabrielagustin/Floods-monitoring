@@ -6,9 +6,8 @@ Created on Thu Jun 28 14:46:41 2018
 
 @author: gag
 
-Documento donde se encuentran las funciones para requeridas para la apertura de las imagenes SAR y
-el analisis de sus histogramas. 
-Los estadisticos calculados a los histogramas se utilizan para la detección de áreas inundadas.
+Document where the functions required for the opening of SAR images and the analysis of histograms are found.
+The statistics calculated to histograms are used for the detection of flooded areas.
 
 """
 
@@ -21,10 +20,21 @@ from matplotlib import pyplot as plt
 #### --------------------------------------------------------------------------------------
 
 def openFileHDF(file, nroBand):
+    """ Function that opens an image with .HDF format and reads a specific band.
+
+    Parameters:
+    -----------
+    file : complete path of the raster image 
+    nroBand : number of the band to be read 
+
+    Returns: 
+    --------
+    src_ds: source raster object
+    band:
+    GeoT: georeference
+    Project: projection
     """
-    Función que abre archivo HDF y carga la banda que recibe como trabajo
-    Retorna: el objeto fuente, la banda, la georeferenciación y la proyección
-    """
+
     #print "Open File"
     # file = path+nameFile
     #print file
@@ -78,10 +88,17 @@ def multimodal(x,mu1,sigma1,A1,mu2,sigma2,A2, mu3,sigma3,A3):
 #### --------------------------------------------------------------------------------------
 
 def listofMax(y):
+    """ Function that lists the maximums of the vector, uses the peakutils function
+
+    Parameters:
+    -----------
+    y : array 
+
+    Returns: 
+    --------
+    myList: list of vector maximums
     """
-    Funcion que lista los maximos del vector y 
-    Utiliza la funcion peakutils
-    """
+
     l=[]
     indexes = peakutils.indexes(y, thres=0.005/max(y), min_dist=50) 
     print(indexes) 
